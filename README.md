@@ -1,7 +1,7 @@
 # ScanAndRunCmd,扫描并且运行Cmd指令
-A simple program to scan weather an exe is running and run cmd command.
+A simple program to scan weather an exe is running and run cmd command. it never appear in everywhere.
 
--写在最前面：如果你不小心启动了程序，请管理员打开powershell，输入：
+-写在最前面：这个程序运行之后不会显示任何界面。如果你不小心启动了程序，请管理员打开powershell，输入：
 ```
 taskkill /f /t /im ScanForDisconnect.exe
 ```
@@ -25,7 +25,9 @@ ScannerRunningTime:
 time1s=2
 time1e=5
 //设置检查的时间段，单位是小时，采用24小时制，支持跨日和多时间段，格式是time*s和time*e。
+```
 例如，我希望早上八点到十点、中午和晚上8点到凌晨五点让它检测并且断网，则可以这样设置：
+```
 time1s=8
 time1e=10
 time2s=12
@@ -38,7 +40,8 @@ time3e=5
 RandomTime:
 min=1
 max=50
-//设置检查到对应的程序正在运行之后，在所设置的范围内随机某秒断一次网，并且本次断网之后，进入下一次扫描的预备周期，单位是秒。例如min=9，max=50，值的就是扫描到程序之后，9-50秒内随机断一次网。
+//设置检查到对应的程序正在运行之后，在所设置的范围内随机某秒断一次网，并且本次断网之后，进入下一次扫描的预备周期，单位是秒。
+例如min=9，max=50，值的就是扫描到程序之后，9-50秒内随机断一次网。
 ```
 
 ```
