@@ -1,5 +1,5 @@
-# ScanAndRunCmd,扫描并且运行Cmd指令
-A simple program to scan weather an exe is running and run cmd command. it never appear in everywhere.
+# ScanAndRunCmd,扫描指定程序是否运行并运行Cmd指令
+A simple program to scan whether an exe is running and run cmd command. it never appear in everywhere.
 
 -写在最前面：这个程序运行之后不会显示任何界面。如果你不小心启动了程序，请管理员打开powershell，输入：
 ```
@@ -7,11 +7,12 @@ taskkill /f /t /im ScanAndRunCmd.exe
 ```
 就可以退出程序。
 
-该程序利用windows开放的api，扫描一次设置的特定进程是否运行，然后在设置的时间内进行一次执行特定的cmd命令。
-你可以把它放在开机启动文件夹：%user%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup内，实现开机运行
+这个程序会利用windows开放的api，扫描一次设置的特定进程是否运行，然后在设置的时间内进行一次执行特定的cmd命令。
 
-配置完成后，双击就能使它运行。它运行没有窗口出现，但是后台会常驻运行。你可以在Defender或者杀毒软件内给它白名单，并且设置为管理员启动。
+它运行没有窗口出现，但是后台会常驻运行。你可以在Defender或者杀毒软件内给它白名单，并且设置为管理员启动。
 你可以通过taskkill /f /t /im ScanAndRunCmd.exe退出它
+
+你可以把它放在开机启动文件夹：%user%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup内，实现开机运行
 
 如何配置system32.config:
 
